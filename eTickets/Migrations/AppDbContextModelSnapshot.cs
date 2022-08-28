@@ -92,6 +92,9 @@ namespace eTickets.Migrations
                     b.Property<DateTime>("End_Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("ImageURL")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("MovieCategory")
                         .HasColumnType("int");
 
@@ -132,7 +135,7 @@ namespace eTickets.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("producers");
+                    b.ToTable("Producers");
                 });
 
             modelBuilder.Entity("eTickets.Models.Actor_Movie", b =>

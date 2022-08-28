@@ -6,5 +6,7 @@
         Comdey,
         Drama,
         Documentry,
+        Horror,
+        Cartoon
     }
 }

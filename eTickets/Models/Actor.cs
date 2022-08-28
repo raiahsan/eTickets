@@ -10,8 +10,11 @@ namespace eTickets.Models
     {
         [Key]
         public int Id { get; set; }
+       [Display(Name ="Profile Picture URL")]
         public string ProfilePictureURL { get; set; }
+        [Display(Name ="FullNmae")]
         public string FullName { get; set; }
+        [Display(Name="Bio")]
         public string Bio { get; set; }
 
         //Realtionship between movie and actor many to many using join table actor_movie

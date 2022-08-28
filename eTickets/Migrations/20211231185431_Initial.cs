@@ -38,7 +38,7 @@ namespace eTickets.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "producers",
+                name: "Producers",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -49,7 +49,7 @@ namespace eTickets.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_producers", x => x.Id);
+                    table.PrimaryKey("PK_Producers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -62,6 +62,7 @@ namespace eTickets.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Start_Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     End_Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<double>(type: "float", nullable: false),
                     MovieCategory = table.Column<int>(type: "int", nullable: false),
                     CinemaId = table.Column<int>(type: "int", nullable: false),
@@ -77,9 +78,9 @@ namespace eTickets.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Movies_producers_CinemaId",
+                        name: "FK_Movies_Producers_CinemaId",
                         column: x => x.CinemaId,
-                        principalTable: "producers",
+                        principalTable: "Producers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -134,7 +135,7 @@ namespace eTickets.Migrations
                 name: "Cinemas");
 
             migrationBuilder.DropTable(
-                name: "producers");
+                name: "Producers");
         }
     }
 }
